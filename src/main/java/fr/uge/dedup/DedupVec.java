@@ -21,7 +21,12 @@ public final class DedupVec<E> {
 
     public void add(E element){
         Objects.requireNonNull(element);
-        list.add(element);
-        map.put(element, element);
+        var existing = map.get(element);
+        if (existing == null) {
+            map.put(element, element);
+            list.add(element);
+        } else {
+            list.add(existing);
+        }
     }
 }
