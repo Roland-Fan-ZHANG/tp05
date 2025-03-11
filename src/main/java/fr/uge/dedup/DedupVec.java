@@ -3,8 +3,8 @@ package fr.uge.dedup;
 import java.util.*;
 
 public final class DedupVec<E> {
-    private final ArrayList list;
-    private final HashMap map;
+    private final ArrayList<E> list;
+    private final HashMap<E, E> map;
 
     public DedupVec(){
         this.list = new ArrayList<>();
@@ -15,12 +15,13 @@ public final class DedupVec<E> {
         return list.size();
     }
 
-    public Object get(int index){
+    public E get(int index){
         return list.get(index);
     }
 
     public void add(E element){
         Objects.requireNonNull(element);
         list.add(element);
+        map.put(element, element);
     }
 }
