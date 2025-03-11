@@ -29,4 +29,9 @@ public final class DedupVec<E> {
             list.add(existing);
         }
     }
+
+    public boolean contains(Object element){
+        Objects.requireNonNull(element);
+        return map.containsKey(element);
+    }
 }
