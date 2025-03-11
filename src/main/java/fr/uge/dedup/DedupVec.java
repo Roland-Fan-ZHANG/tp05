@@ -34,4 +34,11 @@ public final class DedupVec<E> {
         Objects.requireNonNull(element);
         return map.containsKey(element);
     }
+
+    public void addAll(DedupVec<E> dedupVec){
+        Objects.requireNonNull(dedupVec);
+        for(var element : dedupVec.list){
+            add(element);
+        }
+    }
 }
