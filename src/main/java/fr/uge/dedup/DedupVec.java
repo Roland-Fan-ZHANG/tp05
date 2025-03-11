@@ -7,7 +7,7 @@ public final class DedupVec<E> {
     private final HashMap map;
 
     public DedupVec(){
-        this.list = new ArrayList<E>();
+        this.list = new ArrayList<>();
         this.map = new HashMap<>();
     }
 
